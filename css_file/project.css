@@ -1,0 +1,247 @@
+ 
+/* Stilurile pentru împărțirea paginii în două secțiuni */
+.split-container {
+    display: flex;
+    justify-content: center; /* Centrare orizontală a conținutului */
+    align-items: center;
+    /* height: 100vh; Înălțimea paginii */
+    position: relative; /* Setare poziție relativă pentru a poziționa iconurile SVG */
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+.container{
+    width: 100%;
+    padding-bottom: 50px;
+    
+    
+}
+.project-container-hero {
+    position: relative;
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 100vh; /* Setează înălțimea la 100% din înălțimea ferestrei */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; /* Centrează conținutul vertical și orizontal */
+    padding-bottom: 100px;
+}
+
+/* Stiluri pentru umbra */
+.project-container-hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -20px; /* Ajustează poziția umbrei sub container */
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: -1;
+}
+
+/* Stiluri pentru umbra de la sfârșitul containerului */
+.project-container-hero::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -100px; /* Ajustează poziția la sfârșitul containerului */
+    width: 100%;
+    /* height: 50px; Înălțimea umbrei */
+    background: rgba(0, 0, 0, 0.1); /* Culoarea umbrei */
+    z-index: -1;
+}
+
+
+
+.project-right-hero {
+    flex: 1;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+    /* justify-content: flex-end; */
+}
+.project-left-hero {
+    flex: 1;
+    padding: 30px;
+    padding-left: 50px;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 15px;
+    justify-content: flex-end;
+}
+
+.project-title-hero {
+    padding-top: 15px;
+    align-items: center;
+    text-align: left;
+    font-size: 85px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: black;
+}
+
+.project-info-hero {
+    font-size: 18px;
+    margin-bottom: 20px;
+    /* margin-left: 40px; */
+}
+
+.project-info-hero div {
+    margin-bottom: 10px;
+}
+
+.icon-project {
+    color: #745237;
+    font-size: 30px;
+    width: auto;
+    max-width: 80px;
+}
+.text-project-hero{
+    font-size: 15px;
+    font: 1.6em sans-serif;
+    text-align: left; 
+    margin-bottom: 3rem;
+}
+
+
+/* Stilurile pentru afișarea proiectelor */
+.project-container {
+    display: flex;
+    flex-direction: column; /* Proiectele sunt afișate unul sub altul */    
+    justify-content: center; /* Centrare verticală a conținutului */
+    width: 50%; /* Lățimea secțiunii proiectului */
+    margin-left: 20px; /* Margini între secțiuni */
+    margin-right: 20px; /* Margini între secțiuni */
+}
+.project{
+    margin: 20px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.project-right-hero-video {
+    margin-top: 80px;
+    display: flex; 
+    align-items: center; 
+    justify-content: left; 
+    height: 100%;
+
+}
+
+.project-right {
+    position: relative;
+    padding-left: 15px; /* Ajustați spațiul pentru a lăsa loc pentru colț */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    right: -10px;
+
+}
+
+.project-right:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: -20px; /* Ajustați poziția colțului */
+    border-style: solid;
+    border-width: 10px; /* Dimensiunea colțului */
+    border-color: transparent #ccc transparent transparent; /* Culori: stânga, dreapta, sus, jos */
+    transform: rotate(180deg); /* Rotiți săgeata cu 180 de grade */
+}
+.project-right:after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: -20px; /* Ajustați poziția colțului */
+    border-style: solid;
+    border-width: 10px; /* Dimensiunea colțului */
+    border-color: transparent #ccc transparent transparent; /* Culori: stânga, dreapta, sus, jos */
+    transform: rotate(180deg); /* Rotiți săgeata cu 180 de grade */
+}
+
+
+.project-left {
+    position: relative;
+    padding-left: 20px; /* Ajustați spațiul pentru a lăsa loc pentru colț */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    left: -5px;
+    margin-top: 30px;
+}
+
+.project-left:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: -20px; /* Ajustați poziția colțului */
+    border-style: solid;
+    border-width: 10px; /* Dimensiunea colțului */
+    border-color: transparent #ccc transparent transparent; /* Culori: stânga, dreapta, sus, jos */
+}
+
+
+/* Stilurile pentru linia punctată verticală */
+.dotted-line {
+    height: 100%;
+    width: 2px; /* Lățimea liniei punctate */
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 50%; /* Poziționare pe jumătatea lățimii containerului */
+    transform: translateX(-50%); /* Centrare orizontală */
+}
+
+.svg-icon {
+    position: absolute;
+    top: 10%; /* Poziție verticală pe jumătatea înălțimii containerului */
+    transform: translateY(-50%); /* Centrare verticală */
+}
+
+.icon1 {
+    top: -0.2%; /* Ajustați valoarea top pentru prima icon SVG */
+    color:  #745237;;
+    transform: translateY(-40%); /* Centrare verticală */
+}
+
+.icon2 {
+    top: 24%; /* Ajustați valoarea top pentru a doua icon SVG */
+
+}
+.icon3 {
+    top: 26%; /* Ajustați valoarea top pentru a doua icon SVG */
+
+}
+.icon4 {
+    top: 3.5%; /* Ajustați valoarea top pentru a doua icon SVG */
+    color: #000;
+}
+.icon5 {
+    top: 48%; /* Ajustați valoarea top pentru a doua icon SVG */
+}
+.icon6 {
+    top: 50%; /* Ajustați valoarea top pentru a doua icon SVG */
+    /* color: green; */
+}
+.icon7 {
+    top: 2%; /* Ajustați valoarea top pentru a doua icon SVG */
+
+}
+.icon8 {
+    top: 76.5%; /* Ajustați valoarea top pentru a doua icon SVG */
+    color: greenyellow;
+
+}
+.icon9 {
+    top: 75%; /* Ajustați valoarea top pentru a doua icon SVG */
+
+}
+.col{
+    padding: 15px;
+}
+

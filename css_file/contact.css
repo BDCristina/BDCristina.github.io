@@ -1,0 +1,114 @@
+/* Stiluri CSS */
+body { 
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Înălțimea containerului pe întreaga înălțime a ecranului */
+}
+
+
+.contact-container {
+    background-color: #f2f2f2;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row; /* Alinierea orizontală a conținutului */
+    /* text-align: center; Alinierea orizontală a textului */
+    max-width: 1200px; /* Limitarea lățimii conținutului */
+}
+
+.contact-left,
+.contact-right {
+    flex: 1;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: flex-end;
+}
+
+.contact-title {
+    font-size: 85px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+.contact-info-icon {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #543a29;
+    /* margin-left: 40px; */
+}
+
+.contact-info-icon div {
+    margin-bottom: 10px;
+}
+.icon-contact {
+    color: #745237;
+    font-size: 30px;
+    width: auto;
+    max-width: 80px;
+    padding: 20px;
+}
+
+.contact-info div {
+    margin-bottom: 10px;
+}
+
+.icon-contact {
+    color: #745237;
+    font-size: 30px;
+    width: auto;
+    max-width: 80px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 150px;
+}
+
+.form-group button {
+    background-color: #745237;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+.form-group button:hover {
+    background-color: #543a29;
+}
+
