@@ -1,40 +1,42 @@
 /* Stiluri CSS */
-body { 
+body, html { 
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Înălțimea containerului pe întreaga înălțime a ecranului */
+    height: 100%; 
 }
 
 
 .contact-container {
     background-color: #f2f2f2;
-    width: 85%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row; /* Alinierea orizontală a conținutului */
-    /* text-align: center; Alinierea orizontală a textului */
-    max-width: 1200px; /* Limitarea lățimii conținutului */
+    flex-direction: row; 
+    height: 100vh;
 }
 
-.contact-left,
 .contact-right {
     flex: 1;
-    padding: 20px;
+    padding: 10vh;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    justify-content: flex-end;
+}
+
+.contact-left{
+    flex: 1;
+    padding: 10vh;
+    flex-direction: column;
+    align-items: center;
     justify-content: flex-end;
 }
 
 .contact-title {
     font-size: 85px;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 .contact-info {
@@ -52,7 +54,7 @@ body {
 .contact-info-icon div {
     margin-bottom: 10px;
 }
-.icon-contact {
+.icon-contact i {
     color: #745237;
     font-size: 30px;
     width: auto;

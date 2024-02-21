@@ -1,4 +1,10 @@
  
+body, html { 
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: auto; 
+}
 /* Stilurile pentru împărțirea paginii în două secțiuni */
 .split-container {
     display: flex;
@@ -9,9 +15,11 @@
     padding-bottom: 50px;
     margin-bottom: 50px;
 }
+/* .linho { background-color: #E3DBCC;} */
+
 .container{
     width: 100%;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
     
     
 }
@@ -115,6 +123,7 @@
     margin-right: 20px; /* Margini între secțiuni */
 }
 .project{
+    background-color: white;
     margin: 20px;
     padding-bottom: 15px;
     padding-right: 15px;
@@ -205,7 +214,7 @@
 
 .icon1 {
     top: -0.2%; /* Ajustați valoarea top pentru prima icon SVG */
-    color:  #745237;;
+    color:  #745237;
     transform: translateY(-40%); /* Centrare verticală */
 }
 
@@ -245,3 +254,73 @@
     padding: 15px;
 }
 
+/* Stiluri pentru slideshow */
+.slideshow-container {
+    font-size: 25px;
+    position: relative;
+    max-width: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+  }
+  
+.project-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 1000px; Adjust the height as needed */
+  }
+  .project-col{
+    padding: 25px;
+  }
+  
+.mySlides {
+    display: none;
+  }
+  .column {
+    /* float: left; */
+    width: 50%;
+    padding: 5px;
+  }
+  
+.fade {
+    animation: fade 1.5s;
+  }
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: #745237;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color:white;
+  }
+  
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+.prev:hover,
+.next:hover {
+    background-color: white;
+  }
+  
+  /* Stiluri pentru fiecare proiect */
+.project-slide {
+    align-items: center;
+  }
+  
