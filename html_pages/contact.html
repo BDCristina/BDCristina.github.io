@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="..//css_file/style.css">
     <link rel="stylesheet" href="..//css_file/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <!-- Bootstrap CSS -->
     <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
  
@@ -17,6 +18,7 @@
     <div class="contact-container">
         <div class="contact-left">
             <div class="contact-title">CONTACT</div>
+            <p style="font-size: 16px; font-weight: 100; text-align: justify; color: black;  margin-bottom: 50px;">You can contact me via email, phone, or LinkedIn using the details below. If you'd like to learn more about the projects I've worked on, feel free to explore my GitHub profile.</p>
             <div class="row contact-info">
                 <table class="contact-info-icon">
                         <tr>
@@ -27,9 +29,10 @@
                         </tr>
                  </table>
             </div>
+            <p style="font-size: 16px; font-weight: 100; text-align: justify; color: black;  margin-bottom: 50px;">I look forward to hearing from you and exploring potential collaborations!</p>
         </div>
-        <div class="contact-right">
-            <form action="#" method="POST">
+        <!-- <div class="contact-right">
+            <form action="..//php_files/send_email.php" method="POST">
                 <div class="form-group">
                     <label for="name">Nume:</label>
                     <input type="text" id="name" name="name" required>
@@ -46,8 +49,15 @@
                     <button class="custom-button" type="submit">Trimite</button>
                 </div>
             </form>
+        </div> -->
+        <div class="contact-right">
+            <!-- Înlocuiți formularul cu harta aici -->
+            <div id="map" style="height: 400px;"></div>
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script src="..//js_files/contact_maps.js"></script> <!-- Includeți scriptul JavaScript pentru harta aici -->
         </div>
     </div>
+    
     <div id="footerContainer"></div>
     <script src="..//js_files/footer.js"></script>
 </body>
