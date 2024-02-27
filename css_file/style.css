@@ -12,7 +12,7 @@ html{
 }
 
 /* Sections*/
-.section-block{ height:calc(100vh - 8rem); padding-bottom: 15rem; padding-top: 15rem; padding-left: 5rem; padding-right: 5rem;}
+.section-block{ height:calc(100vh - 8rem); padding-bottom: 15rem; padding-top: 5rem; padding-left: 5rem; padding-right: 5rem;}
 .section-block.not-fullscreen { height:auto; display: inline-block;}
 .section-block.oldlace{ background-color: #F8F3E8;} 
 .section-block.linho { background-color: #E3DBCC;}
@@ -20,9 +20,9 @@ html{
     .section-block h1, .section-block h2{ color: black;}
 
 
-@media(max-width:767px), (max-wigth:812px) and(orientation:landscape){
-    .section-block{ height:auto; min-width:calc(100vh - 8rem); padding:2.5rem; }
-    .section-block.not-fullscreen { min-height:0; }
+@media(max-width:767px){
+    .section-block{ height:auto; width: auto; padding:2.5rem; }
+    .section-block.not-fullscreen { min-height:auto; }
     .section-block h1, .section-block h2 {font-size: 2.8rem; margin-bottom: 5rem;}
 }
 
@@ -30,9 +30,9 @@ html{
     width: 50%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .grid-box {
-        width: 100%; /* Pe dispozitivele mai mici, fiecare coloană va ocupa întreaga lățime */
+        width: 100%; 
     }
 }
 /* Sections*/
@@ -47,30 +47,110 @@ header{ position: fixed; top:0; left:0; width:100%; display:flex; justify-conten
         .navigation > a { display: inline-block; margin-right:2rem; font-size:1.7rem; text-decoration:None; color: black; font-weight: 500;}
         .navigation > a:last-child { margin-right:0; }
         .navigation > a:hover { text-decoration:underline;}
+.burger-icon {
+    display: none; /* Ascunde iconul burger inițial */
+    cursor: pointer; /* Face cursorul să arate ca un deget când utilizatorul trece peste icon */
+}
 
+/* Stilurile pentru bara iconului burger */
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+/* Stiluri pentru meniu când este deschis */
+.menu-open .navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-open .navigation a {
+    margin: 10px 0;
+}
 @media(max-width:580px){
     header { padding:0.75rem 2.5rem;}
     .navigation > a { margin-bottom:0.5rem;}
 }
+@media (max-width: 768px) {
+    .navigation {
+        display: none; /* Ascunde meniul de navigare pe dispozitivele mai mici */
+    }
+    .burger-icon {
+        display: block; /* Asigurați-vă că este afișat */
+    }
+}
+/* Stilurile pentru fereastra modală */
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    color: #6b483b; /* Culoare text */
+    cursor: pointer;
+}
+
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(227, 219, 204, 0.8); /* Fundal transparent */
+}
+
+.modal-content a {
+    padding: 10px;
+    text-align: center;
+    display: block; /* Modificare aici */
+    color: #6b483b; /* Culoare text */
+    text-decoration: none;
+    font-size: 20px;
+}
+.modal-content {
+    margin: auto;
+    margin-top: 10%; /* Ajustați poziția verticală */
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centrare pe orizontală */
+}
+
 /* Navigation*/
 
 
 /* Hero*/
 
-.hero {display:flex; align-items:center; position: relative; padding: 10vh 5rem 10vh; background-image:url("..//images/hero.png"); background-position:center; background-repeat:no-repeat; background-size:cover; color: #fff;}
+.hero {display:flex; align-items:center; position: relative; padding: 10vh 5rem 0vh; background-image:url("..//images/hero.png"); background-position:center; background-repeat:no-repeat; background-size:cover; color: #fff; height: 900px;}
     .hero::before{ content: ""; position:absolute; top:0; left:0; width:100%;}
     .hero h1 {position:relative; z-index:1; text-align: left; color: #745237;font-weight: 300;}
     .hero p { position:relative; z-index:1; font-size:5rem; line-height: 1.3;color: black;font-weight: 900;} 
     
-/* @media(max-width:767px), (max-wigth:812px) and(orientation:landscape){
-    .hero{ display: flex; align-items: center;  padding:2.5rem 5rem; height: 45vh; width: 100%;}
-    .hero p { font-size: 1.4rem;}
-    
-} */
-@media(max-width:767px){
-    .hero{ display: flex; align-items: center;  padding:2.5rem 5rem; height: 45vh; width: 100%;}
-    .hero p { font-size: 1.4rem;}
-    
+/* Media query pentru ecranele mai mici */
+@media (max-width: 767px) {
+    .hero{
+        padding: 15vh 5rem 5vh;
+        height: 500px;
+    }
+    .hero-content {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; /* Redimensionează imaginea pentru a umple întotdeauna întreaga suprafață a elementului */
+        height: 300px; /* Înălțimea auto pentru a se adapta conținutului */
+    }
+
+    .hero-content p {
+        font-size: 2rem; /* Reducerea dimensiunii textului pentru ecranele mai mici */
+        
+    }
 }
 /* Hero*/
 
@@ -93,69 +173,118 @@ header{ position: fixed; top:0; left:0; width:100%; display:flex; justify-conten
 
 /* Hero*/
 
-/* Pasiunile si proiectele mele*/
-.my-passions h1,.my-portofolio h1{ margin-bottom:7.5rem;}
-.my-passions-inner-container, .my-portofolio-inner-container { color: black;}
-    .my-passions-inner-container h3, .my-portofolio-inner-container h3 { font-size:2.4rem; text-align: center; margin-bottom: 2.5rem; font-weight: 300;}
-    .my-passions-inner-container h4, .my-portofolio-inner-container h4 { font-size:3rem; text-align: center; margin-bottom: 0rem; font-weight: 300;color:#745237;}
-    .my-passions-inner-container p, .my-portofolio-inner-container p { font-size: 1.6rem; text-align: justify;font-weight: 150;}
+/* Proiectele mele & skills */
+.my-portofolio {
+    width: 100%;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.my-portofolio h1{ margin-bottom:7.5rem; width: auto; text-align: left}
+.my-portofolio-inner-container { color:  black; padding-top: 100px; flex-direction: column; align-items: center; padding-bottom: 100px;}
 
+
+/* Stilurile pentru partea stângă (titlu și text) */
+.my-portofolio-left-inner-container, .box-half{
+    text-align: center;  
+    flex: 1;
+}
+
+.my-portofolio-content-inner-container {
+    margin-bottom: 10px;
+    margin-right: 0px;
+}
+
+.my-portofolio-info{
+    font-size: 16px;
+    font-weight: 100;
+    text-align: justify;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Stilurile pentru video */
+.my-portofolio-right-inner-container, .box-half {
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.my-portofolio-right-inner-container-video {
+    height: 400px; /* Setează o înălțime fixă pentru videoclip */
+    object-fit: cover; /* Asigură că videoclipul este redimensionat pentru a se potrivi în cadrul iframe-ului */
+}  
+
+.my-portofolio-right-inner-container-video {
+    /* margin-top: 80px;
+    display: flex; 
+    align-items: center; 
+    justify-content: left; 
+    height: 100%; */
+    position: relative;
+    padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+
+
+}
+
+.my-portofolio-right-inner-container-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 .skill-section-box > img { width: 15rem; height: 15rem; margin-right: 1.5rem; border-radius: 50%;}
+.skill-section-box{width: auto; padding-left: 5rem; padding-right: 5rem;}
+    .my-skills-box-inner-container h1{display:block; margin-bottom: 7rem; text-align:center; font-size:4.8rem; font-weight:600; }
+    .my-skills-box h3{font-size:2.4rem; text-align: center; margin-bottom: 2.5rem; font-weight: 300;}
 
-@media(max-width:932px ){
-    .video-media{
-        flex-direction: column; /* Setează direcția flexului la vertical */
-        justify-content: center;
-        width: 100%;
+@media(max-width:767px ){
+    .my-portofolio{padding-left: 1.5rem; padding-right: 1.5rem;}
+    .my-portofolio-inner-container{padding-top: 0px;}
+    .my-portofolio h1{ margin-bottom: 5rem; text-align: center}
+    .my-portofolio, .grid-box { float:left; margin: 0 0rem 0rem;}
+    .my-portofolio-right-inner-container-video {
+        max-width: 300px;
+        height: 200px;
     }
 
 }
+@media(max-width:767px ){
+    .my-skills-box{padding-left: 1.5rem; padding-right: 1.5rem;} 
+    .my-skills-box-inner-container{display: block; text-align: center;}
+    .my-skills-box-inner-container h1{ padding-top: 1.5rem};
+    .my-skills-box h3{font-size:1.8rem; text-align: center; margin-bottom: 2.5rem; font-weight: 300;}
 
- /* Pasiunile si proiectele mele*/
+}
+ /* Proiectele mele & skills */
 
+/* Pasiunile mele*/
+.my-passions h1 { margin-bottom:7.5rem; width: auto; padding-left: 5rem; padding-right: 5rem;}
+.my-passions-inner-container{ color: black;}
+    .my-passions-inner-container h3 { font-size:2.4rem; text-align: center; margin-bottom: 2.5rem; font-weight: 300;}
+    .my-passions-inner-container h4{ font-size:3rem; text-align: center; margin-bottom: 0rem; font-weight: 300;color:#745237;}
+    .my-passions-inner-container p { font-size: 1.6rem; text-align: justify;font-weight: 150;}
 
-.rubrica-imagini {
-    display: flex;
-    justify-content: space-between;
-    max-width: 100%;
-    margin: 0 auto; /* Centrează rubrica pe pagină */
-    flex-wrap: wrap; /* Permite elementelor să se așeze pe mai multe rânduri */
+@media(max-width:767px ){
+    .my-passions{padding-left: 1.5rem; padding-right: 1.5rem;  margin-bottom: 5px;}
+    .my-passions h1{margin-bottom: 5px;}
+    .my-passions-inner-container{ display: block; text-align: center;}
 }
 
-.imagine-cercuri {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-left:  20px; /* Adaugă spațiu între imagini */
-    margin-right:  20px; /* Adaugă spațiu între imagini */
-    margin-bottom:  50px; /* Adaugă spațiu între imagini */
-}
-
-.imagine-cercuri img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Recomandation*/
-.rec-section-box { height: 21rem; display:flex; align-items: center; color: black;}
-    .rec-section-box > img { width: 15rem; height: 15rem; margin-right: 2.5rem; border-radius: 50%;}
-    .rec-section-box h3 {display: block; margin-bottom:2rem; font-size: 2.4rem; font-weight: 300;}
-    .rec-section-box p {font-size: 1.4rem;font-weight: 150;}
-
-@media(max-width:1023px){
-    .rec-section-box{ height:auto; display:block; text-align:center;}
-}
-/* Recomandation*/
+ /* Pasiunile mele*/
 
 /* About me*/
-.about-me { display: block; justify-content:center; align-items: center; height: auto;}
+.about-me { display: block; justify-content:center; align-items: center; height: auto; width: auto; padding-left: 5rem; padding-right: 5rem;}
 .about-me-inner-container { display: flex; justify-content: space-around; align-items: center; color: black;}
     .about-me-inner-container > img { width: 30rem; height: 30rem; border-radius: 50%; margin-right: 5rem;}
     .about-me-inner-container h3 { font-size: 3.2rem; margin-bottom: 3rem;}
     .about-me-inner-container p { font-size: 1.6rem; text-align: justify;font-weight: 150;}
   
 @media(max-width:767px ){
+    .about-me{ padding-left: 1.5rem; padding-right: 1.5rem; margin:0 1rem;}
     .about-me-inner-container{ display: block; text-align: center;}
     .about-me-inner-container > img { width: 20rem; height: 20rem; margin-right: 0; margin-bottom: 5rem;}
 }
@@ -171,10 +300,21 @@ footer{ top:0; left:0; width:100%; display:flex; justify-content:space-between; 
     .contact > a:last-child { margin-right:0; }
     .contact > a:hover { text-decoration:underline;}
 
-@media(max-width:580px){
-    footer { padding:0.75rem 2.5rem;}
-    .contact > a { margin-bottom:0.5rem;}
+/* Modificare pentru a afișa secțiunea de contact mai întâi pe dispozitivele mobile */
+@media (max-width: 580px) {
+    footer {
+        flex-direction: column; /* Afișează elementele într-o singură coloană */
+        padding: 0.75rem 2.5rem; /* Reducerea padding-ului pentru a se potrivi pe ecranele mai mici */
+        align-items: center; /* Aliniere elemente pe axa verticală */
+    }
+
+    .contact {
+        padding-top: 7px;
+        order: -1; /* Poziționează secțiunea de contact înainte de text */
+        margin-bottom: 0.1rem; /* Adăugați un spațiu între secțiunea de contact și text */
+    }
 }
+
 /* Footer*/
 
 /* Grid */
@@ -190,9 +330,9 @@ footer{ top:0; left:0; width:100%; display:flex; justify-content:space-between; 
     }
 
 @media(max-width:767px){
-    .grid-box { float:left; margin: 0 2.5rem 4rem;}
+    .grid-box { float:left;}
     .box-half { width:calc(100% - 5rem); }
-    .box-third { width: calc(50% - 5rem); }
+    .box-third { width: calc(50% - 5rem); margin:0 2.5rem;}
     .box-quarter { width:calc(33.33% - 5rem); }
     .box-fifth {
         width: calc(20% - 5rem);
@@ -242,6 +382,8 @@ footer{ top:0; left:0; width:100%; display:flex; justify-content:space-between; 
     font-weight: 150;
 }
 
+
+
 .custom-button:hover {
     background-color: #5b3b29;
 }
@@ -249,4 +391,8 @@ footer{ top:0; left:0; width:100%; display:flex; justify-content:space-between; 
 .text-project{
     font-size:1.6rem; text-align: justify; font-weight: 150;
 
+}
+
+.icon-project{
+    color:  #5b3b29;
 }

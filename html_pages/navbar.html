@@ -2,11 +2,27 @@
     <a class="logo" href="/index.html">
         <img src="..//images/Logo.png" alt="logo"/>
     </a>
+    <div class="burger-icon" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
     <nav class="navigation">
+        <a href="..//index.html">HOME</a>
+        <a href="..//html_pages/projects.html">PROJECTS</a>
+        <a href="../html_pages/contact.html">CONTACT</a>
+    </nav>
+
+</header>
+
+<div class="modal-container" id="modalContainer">
+    <div class="modal-content">
+        <span class="close" onclick="toggleMenu()">&times;</span>
         <a href="..//index.html">HOME</a>
         <a href="..//html_pages/projects.html">PROJECTS</a>
         <a href="/index.html#section-2">SKILLS</a>
         <a href="/index.html#section-4">ABOUT</a>
         <a href="../html_pages/contact.html">CONTACT</a>
-    </nav>
-</header>
+    </div>
+</div>
+

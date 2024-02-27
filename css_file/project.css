@@ -1,119 +1,71 @@
- 
 body, html { 
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     height: auto; 
+}   
+/* Stilurile pentru container */
+.container {
+    width: 90%;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-/* Stilurile pentru împărțirea paginii în două secțiuni */
-.split-container {
-    display: flex;
-    justify-content: center; /* Centrare orizontală a conținutului */
-    align-items: center;
-    /* height: 100vh; Înălțimea paginii */
-    position: relative; /* Setare poziție relativă pentru a poziționa iconurile SVG */
-    padding-bottom: 50px;
-    margin-bottom: 50px;
-}
-/* .linho { background-color: #E3DBCC;} */
 
-.container{
-    width: 100%;
-    /* padding-bottom: 50px; */
-    
-    
-}
+/* Stilurile pentru zona de hero */
 .project-container-hero {
-    position: relative;
-    background-color: #f2f2f2;
-    width: 100%;
-    height: 100vh; /* Setează înălțimea la 100% din înălțimea ferestrei */
+    padding-top: 100px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center; /* Centrează conținutul vertical și orizontal */
+    flex-direction: column;
+    align-items: center;
     padding-bottom: 100px;
 }
 
-/* Stiluri pentru umbra */
-.project-container-hero::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -20px; /* Ajustează poziția umbrei sub container */
-    width: 100%;
-    height: 20px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
-    z-index: -1;
-}
-
-/* Stiluri pentru umbra de la sfârșitul containerului */
-.project-container-hero::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -100px; /* Ajustează poziția la sfârșitul containerului */
-    width: 100%;
-    /* height: 50px; Înălțimea umbrei */
-    background: rgba(0, 0, 0, 0.1); /* Culoarea umbrei */
-    z-index: -1;
-}
-
-
-
-.project-right-hero {
-    flex: 1;
-    padding: 15px;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 15px;
-    /* justify-content: flex-end; */
-}
+/* Stilurile pentru partea stângă (titlu și text) */
 .project-left-hero {
-    flex: 1;
-    padding: 30px;
-    padding-left: 50px;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 15px;
-    justify-content: flex-end;
+    text-align: center;  
+}
+
+.project-content {
+    margin-bottom: 10px;
+    margin-right: 0px;
 }
 
 .project-title-hero {
-    padding-top: 15px;
-    align-items: center;
-    text-align: left;
-    font-size: 85px;
+    font-size: 80px;
     font-weight: bold;
-    margin-bottom: 50px;
     color: black;
-}
-
-.project-info-hero {
-    font-size: 18px;
-    margin-bottom: 20px;
-    /* margin-left: 40px; */
-}
-
-.project-info-hero div {
     margin-bottom: 10px;
 }
 
-.icon-project {
-    color: #745237;
-    font-size: 30px;
-    width: auto;
-    max-width: 80px;
-}
-.text-project-hero{
-    font-size: 15px;
-    font: 1.6em sans-serif;
-    text-align: left; 
-    margin-bottom: 3rem;
+.project-info-hero {
+    font-size: 16px;
+    font-weight: 100;
+    text-align: justify;
+    color: black;
+    margin-bottom: 20px;
 }
 
+/* Stilurile pentru video */
+.project-right-hero {
+    text-align: center;
+}
 
-/* Stilurile pentru afișarea proiectelor */
+.project-right-hero-video {
+    width: 100%;
+    height: 400px; /* Setează o înălțime fixă pentru videoclip */
+    object-fit: cover; /* Asigură că videoclipul este redimensionat pentru a se potrivi în cadrul iframe-ului */
+}
+
+.split-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center; /* Centrare orizontală a conținutului */
+    align-items: center;
+    position: relative; /* Setare poziție relativă pentru a poziționa iconurile SVG */
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}        
 .project-container {
     display: flex;
     flex-direction: column; /* Proiectele sunt afișate unul sub altul */    
@@ -125,6 +77,7 @@ body, html {
 .project{
     background-color: white;
     margin: 20px;
+    padding-top: 15px;
     padding-bottom: 15px;
     padding-right: 15px;
     padding-left: 15px;
@@ -252,54 +205,130 @@ body, html {
 }
 .col{
     padding: 15px;
+
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+    overflow-x: hidden;
+    }
+
+    .project-container-hero {
+        padding-bottom: 10px;
+    }
+
+    .project{
+    padding: 10px;
+    }
+    .split-container{
+    /* margin-top: 10vh; */
+    width: 100%;
+    }
+    .project-container {
+    margin-top: 5vh;
+    width: 85%;
+    transform: translateX(3%);
+    }
+
+    .project-right {
+    padding-left: 10px;
+    padding-right:10px;
+    margin-left: 20px;
+    margin-right: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+
+    }   
+
+    .project-right:before {
+    content: "";
+    right: 100%; /* Ajustați poziția colțului */
+    border-style: solid;
+    border-width: 10px; /* Dimensiunea colțului */
+    border-color: transparent #ccc transparent transparent; /* Culori: stânga, dreapta, sus, jos */
+    transform: rotate(-360deg); /* Rotiți săgeata cu 180 de grade */
+    }
+
+    .project-right:after{
+    display: none; 
+    }
+
+    .project-left {
+    display: none;
+    }
+
+    .dotted-line {
+    left: 6.5%; /* Centrare orizontală */
+    transform: translateX(-50%);
+    }
+
+    .svg-icon {
+    left: 2.5%;
+    display: block;
+    margin: 10px auto; /* Centrare pe orizontală */
+    }
+
+    .icon1 {
+    top: -5px;
+    }
+    .icon2 {
+    top: 550px;
+    }
+    .icon3 {
+    display: none;
+    }
+    .icon4 {
+    top: 70px;
+    }
+    .icon5 {
+    display: none;
+    }
+    .icon6 {
+    top: 1150px;
+    }
+    .icon7 {
+    display: none;
+    }
+    .icon8 {
+    top: 1820px;
+    }
+    .icon9 {
+    display: none;
+    }
+}
+
 
 /* Stiluri pentru slideshow */
 .slideshow-container {
     font-size: 25px;
     position: relative;
     max-width: auto;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-bottom: 50px;
-  }
-  
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
 .project-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 1000px; Adjust the height as needed */
-  }
-  .project-col{
-    padding: 25px;
-  }
-  
-.mySlides {
-    display: none;
-  }
-  .column {
-    /* float: left; */
-    width: 50%;
-    padding: 5px;
-  }
-  
-.fade {
-    animation: fade 1.5s;
-  }
-  
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
-  
-  
-.prev,
-.next {
+    flex-direction: column;
+    height: auto; /* Anulați înălțimea fixă pentru a permite redimensionarea automată */
+}
+
+.mobile-video {
+    width: 90%; /* Ajustați lățimea videoclipului la 90% din lățimea containerului */
+    height: 800px; /* Permiteți redimensionarea înălțimii videoclipului */
+    margin-bottom: 20px; /* Adăugați spațiu între videoclipuri */
+}
+
+.prev, .next {
     position: absolute;
     top: 50%;
     width: auto;
     padding: 16px;
-    margin-top: -22px;
+    /* margin-top: -22px; */
     color: #745237;
     font-weight: bold;
     font-size: 25px;
@@ -307,20 +336,71 @@ body, html {
     border-radius: 0 3px 3px 0;
     user-select: none;
     background-color:white;
-  }
-  
+}
+
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
-  }
-  
-.prev:hover,
-.next:hover {
+}
+
+.prev:hover, .next:hover {
     background-color: white;
-  }
-  
-  /* Stiluri pentru fiecare proiect */
-.project-slide {
-    align-items: center;
-  }
-  
+}
+
+/* Media query pentru dispozitivele mobile */
+@media only screen and (min-width: 600px) {
+    .project-content {
+        margin-bottom: 30px;
+        margin-right: 70px;
+    }
+    .project-container-hero {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .project-left-hero {
+        /* flex: 1; */
+        padding-right: 20px;
+        text-align: left;
+    }
+
+    .project-right-hero {
+        /* flex: 1; */
+        text-align: right;
+        margin-top: 0px;
+    }
+
+    .project-right-hero-video {
+        max-width: 640px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .project-right-hero-video iframe {
+        width: auto; /* Ajustează înălțimea iframe-ului pentru dispozitivele mobile */
+        height: 200px;
+    }
+
+    .mySlides {
+        display: block; /* Afișați toate slide-urile pe dispozitivele mobile */
+    }
+
+    .project-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto; /* Anulați înălțimea fixă pentru a permite redimensionarea automată */
+    }
+
+    .mobile-video {
+        width: 90%; /* Ajustați lățimea videoclipului la 90% din lățimea containerului */
+        height: 250px; /* Permiteți redimensionarea înălțimii videoclipului */
+        margin-bottom: 20px; /* Adăugați spațiu între videoclipuri */
+    }
+
+    .prev, .next {
+        display: block; /* Faceți butoanele de navigare vizibile pe dispozitivele mobile */
+        font-size: 20px; /* Reducerea dimensiunii textului pentru butoane */
+        padding: 10px; /* Ajustați spațiul intern al butoanelor */
+    }
+}
